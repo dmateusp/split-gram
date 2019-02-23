@@ -6,17 +6,20 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi",
+    "start": "node server.js"
   },
   "dependencies": {
-    "caman": "^4.1.2",
+    "express": "^4.16.4",
+    "serve-static": "^1.13.2",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-tiny-slider": "^0.1.31"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
