@@ -84,4 +84,8 @@ ul {
 li {
   text-align: center;
 }
+#image-component {
+  max-width: 400px;
+  margin: auto;
+}
 </style>
