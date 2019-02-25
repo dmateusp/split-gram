@@ -1,6 +1,6 @@
 <template>
   <div ref="slideshowContainer">
-    <tiny-slider class="slideshow-container" @transitionEnd="$_selectIndex" :mouse-drag="true" :touch="true" :loop="false" :controls="false" :nav="false" items="1" gutter="5">
+    <tiny-slider class="slideshow-container" @transitionEnd="$_selectIndex" :mouse-drag="true" :touch="true" :loop="false" :controls="false" :nav="false" items="1">
         <div :class="(index === 0) ? 'split-slides' : 'split-slides hidden'" :key="index" v-for="(image, index) of imagesSplit">
           <img :src="image.data" :id="image.name" class="image-width-browser"/>
         </div>
